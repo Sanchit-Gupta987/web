@@ -107,8 +107,8 @@ export default function Portfolio() {
   ]
 
   const skills = {
-    "Programming Languages": ["Python", "Java", "JavaScript", "C", "Embedded C (Arduino)", "HTML", "CSS", "SQL"],
-    "Frameworks & Technologies": ["React", "Django", "Jinja", "Full-Stack Development"],
+    "Programming Languages": ["Python", "Java", "JavaScript", "C++", "Embedded C (Arduino)", "HTML", "CSS", "SQL"],
+    "Frameworks & Technologies": ["React", "Django", "Langchain", "Full-Stack Development"],
     Specializations: [
       "Machine Learning",
       "Data Analysis",
@@ -123,25 +123,25 @@ export default function Portfolio() {
       icon: Car,
       title: "Formula 1",
       description:
-        "Passionate about F1 racing, following the technical innovations and strategic elements of the sport.",
+        'Passionate about F1 racing, following the technical innovations and strategic elements of the sport. It\'s Hammertime!',
       color: "text-red-500",
     },
     {
       icon: BookOpen,
       title: "Reading",
-      description: "Avid reader of mystery and sci-fi novels, exploring complex narratives and futuristic concepts.",
+      description: "Avid reader of mystery, action and sci-fi novels, which keeps me guessing on what's going to happen next and lets me create my own movies in my head.",
       color: "text-blue-500",
     },
     {
       icon: Gamepad2,
       title: "Gaming",
-      description: "Enjoy strategic and puzzle games that challenge problem-solving skills and creativity.",
+      description: "Enjoy fast paced team games that requires thinking on the spot, promotes teamwork and challenges creativity.",
       color: "text-green-500",
     },
     {
       icon: ChefHat,
       title: "Baking",
-      description: "Love experimenting with recipes and the precise science behind perfect baked goods.",
+      description: "Love experimenting and perfecting my recipes, and devouring the final product ofcourse!",
       color: "text-orange-500",
     },
   ]
@@ -158,9 +158,8 @@ export default function Portfolio() {
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
-                  className={`capitalize transition-colors hover:text-primary ${
-                    activeSection === section ? "text-primary font-medium" : "text-muted-foreground"
-                  }`}
+                  className={`capitalize transition-colors hover:text-primary ${activeSection === section ? "text-primary font-medium" : "text-muted-foreground"
+                    }`}
                 >
                   {section === "hero" ? "Home" : section}
                 </button>
@@ -220,18 +219,25 @@ export default function Portfolio() {
           </div>
 
           <div className="flex gap-4 justify-center">
-            <Button size="lg" className="animate-glow">
-              <Download className="w-4 h-4 mr-2" />
-              Download Resume
-            </Button>
-            <Button variant="outline" size="lg">
-              <Github className="w-4 h-4 mr-2" />
-              GitHub
-            </Button>
-            <Button variant="outline" size="lg">
-              <Linkedin className="w-4 h-4 mr-2" />
-              LinkedIn
-            </Button>
+            <a href="/Sanchit_Gupta_Resume.pdf" download>
+              <Button size="lg" className="animate-glow">
+                <Download className="w-4 h-4 mr-2" />
+                Download Resume
+              </Button>
+            </a>
+            <a href="https://github.com/Sanchit-Gupta987" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="lg">
+                <Github className="w-4 h-4 mr-2" />
+                GitHub
+              </Button>
+            </a>
+            <a href="https://www.linkedin.com/in/sanchit-gupta-722146272/" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="lg">
+                <Linkedin className="w-4 h-4 mr-2" />
+                LinkedIn
+              </Button>
+            </a>
+
           </div>
         </div>
       </section>
@@ -253,11 +259,15 @@ export default function Portfolio() {
                   theoretical knowledge and practical application. My internship experiences have allowed me to work
                   with cutting-edge technologies and contribute to meaningful projects that drive real business impact.
                 </p>
+                <p className="text-lg leading-relaxed">
+                 I also love drinking coffee and listening to pop music.
+                </p>
                 <div className="flex flex-wrap gap-2 pt-4">
                   <Badge variant="secondary">Problem Solver</Badge>
+                  <Badge variant="secondary">AI Engineer</Badge>
                   <Badge variant="secondary">Full-Stack Developer</Badge>
                   <Badge variant="secondary">Data Analyst</Badge>
-                  <Badge variant="secondary">AI Enthusiast</Badge>
+                  <Badge variant="secondary">Software Engineer</Badge>
                 </div>
               </CardContent>
             </Card>
@@ -296,15 +306,19 @@ export default function Portfolio() {
                     <div className="space-y-2">
                       <div className="flex items-start gap-2">
                         <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                        <span className="text-sm">90% reduction in manual analysis time through automation</span>
+                        <span className="text-sm">Automation of report generation.</span>
                       </div>
                       <div className="flex items-start gap-2">
                         <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                        <span className="text-sm">70% improvement in AI chatbot accuracy</span>
+                        <span className="text-sm">Fine-Tuning and Training of AI chatbot.</span>
                       </div>
                       <div className="flex items-start gap-2">
                         <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                        <span className="text-sm">50% reduction in database query time</span>
+                        <span className="text-sm">Analyzed business viability of properties and investments.</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-sm">Cleaned up and Optimized Credit-Union database</span>
                       </div>
                     </div>
                   </div>
@@ -356,9 +370,8 @@ export default function Portfolio() {
                     {[
                       "Linear Algebra",
                       "Discrete Mathematics",
-                      "Algorithms",
-                      "Data Structures",
-                      "Artificial Intelligence",
+                      "Calculus",
+                      "Data Visualization",
                     ].map((course) => (
                       <Badge key={course} variant="outline">
                         {course}
@@ -369,23 +382,38 @@ export default function Portfolio() {
                 <div>
                   <h4 className="font-semibold mb-3 text-primary">Programming Coursework</h4>
                   <div className="flex flex-wrap gap-2">
-                    {["Java", "Full-Stack Development", "Computer Security", "Software Engineering"].map((course) => (
-                      <Badge key={course} variant="outline">
-                        {course}
-                      </Badge>
-                    ))}
+                    {["Java", "Full-Stack Development", "Computer Security", "Software Engineering", "Algorithms", "Data Structures", "Artificial Intelligence", "Machine Learning"].map((course) => (
+                        <Badge key={course} variant="outline">
+                          {course}
+                        </Badge>
+                      ))}
                   </div>
                 </div>
                 <div>
                   <h4 className="font-semibold mb-3 text-primary">Economics Coursework</h4>
                   <div className="flex flex-wrap gap-2">
-                    {["Microeconomics", "Macroeconomics", "Topics in Monetary Policy", "Data Visualization"].map(
+                    {["Microeconomics", "Macroeconomics", "Topics in Monetary Policy", "Data Visualization", "Computational Economics"].map(
                       (course) => (
                         <Badge key={course} variant="outline">
                           {course}
                         </Badge>
                       ),
                     )}
+                  </div>
+                </div>
+                <div>
+                  <h4 className="font-semibold mb-3 text-primary">Other Coursework</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {[
+                      "Reading and Writing across disciplines",
+                      "Intro to chemistry",
+                      "Intermediate Physics",
+                      "Indoor Soccer"
+                    ].map((course) => (
+                      <Badge key={course} variant="outline">
+                        {course}
+                      </Badge>
+                    ))}
                   </div>
                 </div>
               </CardContent>
@@ -477,21 +505,47 @@ export default function Portfolio() {
             tech enthusiasts.
           </p>
           <div className="flex gap-4 justify-center">
-            <Button>
-              <Mail className="w-4 h-4 mr-2" />
-              Email Me
-            </Button>
-            <Button variant="outline">
-              <Github className="w-4 h-4 mr-2" />
-              GitHub
-            </Button>
-            <Button variant="outline">
-              <Linkedin className="w-4 h-4 mr-2" />
-              LinkedIn
-            </Button>
+            <div className="flex gap-4">
+              {/* Primary mailto */}
+              <a href="mailto:sanchit.private@gmail.com">
+                <Button>
+                  <Mail className="w-4 h-4 mr-2" />
+                  Email Me
+                </Button>
+              </a>
+
+              {/* Gmail fallback */}
+              <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=sanchit.private@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="outline">
+                  Gmail me
+                </Button>
+              </a>
+            </div>
+
+            <a href="https://github.com/Sanchit-Gupta987" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline">
+                <Github className="w-4 h-4 mr-2" />
+                GitHub
+              </Button>
+            </a>
+            <a href="https://www.linkedin.com/in/sanchit-gupta-722146272/" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline">
+                <Linkedin className="w-4 h-4 mr-2" />
+                LinkedIn
+              </Button>
+            </a>
           </div>
           <Separator className="my-8" />
-          <p className="text-sm text-muted-foreground">© 2025 Sanchit Gupta. Built with Next.js and Tailwind CSS.</p>
+          <div className="flex flex-col items-center">
+            <p className="text-sm text-muted-foreground">© 2025 Sanchit Gupta</p>
+            <p className="text-xs text-muted-foreground/70 self-end">
+              Built with Next.js and Tailwind CSS
+            </p>
+          </div>
         </div>
       </footer>
     </div>
